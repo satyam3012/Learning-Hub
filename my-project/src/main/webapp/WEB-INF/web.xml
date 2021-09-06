@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>my-project</display-name>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <!-- Handle Admin register-->
+  <servlet>
+  	<servlet-name>RegisterAdminServlet</servlet-name>
+    <servlet-class>myproject.controller.RegisterAdminServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RegisterAdminServlet</servlet-name>
+    <url-pattern>/RegisterAdminServlet</url-pattern>
+  </servlet-mapping>
+  
+  <!-- Handle User register-->
+  <servlet>
+  	<servlet-name>RegisterUserServlet</servlet-name>
+  	<servlet-class>myproject.controller.RegisterUserServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>RegisterUserServlet</servlet-name>
+  	<url-pattern>/RegisterUserServlet</url-pattern>
+  </servlet-mapping>
+  
+  <!-- Handle User login -->
+  <servlet>
+  	<servlet-name>LoginUserServlet</servlet-name>
+  	<servlet-class>myproject.controller.LoginUserServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>LoginUserServlet</servlet-name>
+  	<url-pattern>/LoginUserServlet</url-pattern>
+  </servlet-mapping>
+  
+  <!-- handle adding contact -->
+  <servlet>
+  	<servlet-name>AddContactServlet</servlet-name>
+  	<servlet-class>myproject.controller.AddContactServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>AddContactServlet</servlet-name>
+  	<url-pattern>/AddContactServlet</url-pattern>
+  </servlet-mapping>
+</web-app>

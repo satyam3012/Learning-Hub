@@ -1,0 +1,6 @@
+#Tomcat publish data
+#Fri Sep 03 13:20:07 IST 2021
+org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\satyapan\\eclipse-workspace\\DemoMVC\\src\\main\\webapp\\WEB-INF\\lib\\spring-web-5.3.9.jar=C\:\\apache-tomcat-9\\apache-tomcat-9.0.52\\webapps\\DemoMVC\\WEB-INF\\lib\\spring-web-5.3.9.jar
+org.eclipse.jst.jee.server\:DemoMVC=C\:\\apache-tomcat-9\\apache-tomcat-9.0.52\\webapps\\DemoMVC
+org.eclipse.jst.jee.server\:my-project=C\:\\apache-tomcat-9\\apache-tomcat-9.0.52\\webapps\\my-project
+org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\satyapan\\eclipse-workspace\\DemoMVC\\src\\main\\webapp\\WEB-INF\\lib\\spring-web-5.3.9-sources.jar=C\:\\apache-tomcat-9\\apache-tomcat-9.0.52\\webapps\\DemoMVC\\WEB-INF\\lib\\spring-web-5.3.9-sources.jar

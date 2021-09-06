@@ -1,0 +1,56 @@
+package myproject.controller;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.SQLException;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import myproject.Dao.AdminDao;
+import myproject.entity.Admin;
+
+/**
+ * Servlet implementation class RegisterAdminServlet
+ */
+public class RegisterAdminServlet extends HttpServlet {
+	private static final long serialVersionUID = 102831973239L;
+    
+    public RegisterAdminServlet() {
+        super();
+    }
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		PrintWriter out = response.getWriter();
+		int id = Integer.parseInt(request.getParameter("adminId"));
+		String name = request.getParameter("adminName");
+		String password = request.getParameter("password");
+		String email = request.getParameter("email");
+		
+		AdminDao adminDao = new AdminDao();
+		Admin admin = new Admin(id, name, email, password);
+		admin.setAdminId(id);
+		admin.setName(name);
+		admin.setPassword(password);
+		admin.setEmail(email);
+		
+		try {
+			if(adminDao.registerAdmin(admin))
+				out.println("Admin registered successfully.");
+			else
+				out.println("Admin not registered");
+		} catch(SQLException e) {
+			e.printStackTrace();
+		}	
+	}
+
+}

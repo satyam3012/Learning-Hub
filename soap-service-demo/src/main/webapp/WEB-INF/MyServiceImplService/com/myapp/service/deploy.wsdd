@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from MyServiceImplService WSDL service -->
+
+  <service name="MyServiceImpl" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://service.myapp.com"/>
+      <parameter name="wsdlServiceElement" value="MyServiceImplService"/>
+      <parameter name="schemaQualified" value="http://service.myapp.com"/>
+      <parameter name="wsdlServicePort" value="MyServiceImpl"/>
+      <parameter name="className" value="com.myapp.service.MyServiceImpl"/>
+      <parameter name="wsdlPortType" value="MyServiceImpl"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://service.myapp.com" xmlns:retNS="http://service.myapp.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="sayHello" qname="operNS:sayHello" returnQName="retNS:sayHelloReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://service.myapp.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:name" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://service.myapp.com" xmlns:retNS="http://service.myapp.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="addNumbers" qname="operNS:addNumbers" returnQName="retNS:addNumbersReturn" returnType="rtns:int" soapAction="">
+        <parameter xmlns:pns="http://service.myapp.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:a" type="tns:int"/>
+        <parameter xmlns:pns="http://service.myapp.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:b" type="tns:int"/>
+      </operation>
+      <parameter name="allowedMethods" value="sayHello addNumbers"/>
+
+  </service>
+</deployment>

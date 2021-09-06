@@ -1,0 +1,21 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Register Admin</title>
+</head>
+<body>
+	<form action="RegisterAdminServlet" method="post">
+	<pre>
+	Admin ID : <input type="number" name="adminid"><br>
+	Admin Name : <input type="text" name="adminname"><br>
+	Password : <input type="password" name="password"><br>
+	EmailId : <input type="email" name="email"><br>
+			<input type="submit" value="Register" />
+			<input type="reset" value="Reset">
+	</pre>
+</form>
+</body>
+</html>

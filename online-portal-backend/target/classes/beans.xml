@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+		
+		<bean id="address1" class="com.amdocs.training.model.Address">
+			<constructor-arg name="houseNumber" value="B/12" />
+			<constructor-arg name="street" value="aryan nagar" />
+			<constructor-arg name="city" value="ranchi" />
+			<constructor-arg name="state" value="jharkhand" />
+			<constructor-arg name="pin" value="834001" />
+			<constructor-arg name="country" value="India" />
+		</bean>
+		
+		<bean id="user1" class="com.amdocs.training.model.User">
+			<constructor-arg name="id" value="10001" />
+			<constructor-arg name="username" value="admin" />
+			<constructor-arg name="password" value="admin123" />
+			<constructor-arg name="email" value="admin@gmail.com" />
+			<constructor-arg name="phoneNo" value="1234567890" />
+			<constructor-arg name="address" ref="addr" />
+		</bean>
+
+</beans>

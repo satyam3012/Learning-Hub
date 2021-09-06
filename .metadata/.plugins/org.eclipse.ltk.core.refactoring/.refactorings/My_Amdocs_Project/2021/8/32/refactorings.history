@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;My_Amdocs_Project/src/main/java/myproject/main&apos; to &apos;controller&apos;" description="Rename resource &apos;main&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/java/myproject/main" name="controller" stamp="1628348032189" updateReferences="true"/>
+</session>

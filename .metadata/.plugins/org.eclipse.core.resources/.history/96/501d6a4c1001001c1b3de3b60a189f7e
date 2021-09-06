@@ -1,0 +1,23 @@
+package com.demo.SpringJdbc;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class Test {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml");
+		try {
+			EmployeeDao empDao = (EmployeeDao)ctx.getBean("empDao");
+			int status = empDao.saveEmployee(new Employee(1,"Satyam",5000));
+			if(status==1)
+				System.out.println("employee inserted");
+			else
+				System.out.println("error in insertion");
+		} finally {
+			ctx.close();
+		}
+	}
+
+}
